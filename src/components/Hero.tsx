@@ -63,22 +63,22 @@ const Hero = () => {
           
           <div className="relative">
             <div className="grid grid-cols-2 gap-6">
-              <div className="glass-card p-6 rounded-2xl hover:scale-105 transition-transform duration-300">
+              <div className="glass-card p-6 rounded-2xl hover:scale-105 transition-transform duration-300 h-32 flex flex-col justify-center">
                 <div className="text-4xl font-bold text-primary mb-2">24/7</div>
                 <div className="text-sm text-muted-foreground">Available Service</div>
               </div>
               
-              <div className="glass-card p-6 rounded-2xl hover:scale-105 transition-transform duration-300 mt-8">
+              <div className="glass-card p-6 rounded-2xl hover:scale-105 transition-transform duration-300 h-32 flex flex-col justify-center">
                 <div className="text-4xl font-bold text-secondary mb-2">99.9%</div>
                 <div className="text-sm text-muted-foreground">Customer Satisfaction</div>
               </div>
               
-              <div className="glass-card p-6 rounded-2xl hover:scale-105 transition-transform duration-300 -mt-4">
+              <div className="glass-card p-6 rounded-2xl hover:scale-105 transition-transform duration-300 h-32 flex flex-col justify-center">
                 <div className="text-4xl font-bold text-accent mb-2">10k+</div>
                 <div className="text-sm text-muted-foreground">Homes Cleaned</div>
               </div>
               
-              <div className="glass-card p-6 rounded-2xl hover:scale-105 transition-transform duration-300">
+              <div className="glass-card p-6 rounded-2xl hover:scale-105 transition-transform duration-300 h-32 flex flex-col justify-center">
                 <div className="text-4xl font-bold text-primary mb-2">2hr</div>
                 <div className="text-sm text-muted-foreground">Response Time</div>
               </div>

@@ -8,7 +8,7 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* Mopify Cleaning - Bold & Fresh Design System */
+    /* Mopify Cleaning - Tiffany Minimal Design System */
     --background: 195 100% 8%;
     --foreground: 0 0% 100%;
 
@@ -18,19 +18,19 @@ All colors MUST be HSL.
     --popover: 195 80% 12%;
     --popover-foreground: 0 0% 100%;
 
-    /* Bright cyan - water & cleanliness */
+    /* Tiffany - water & cleanliness */
     --primary: 189 100% 50%;
     --primary-foreground: 195 100% 8%;
 
-    /* Electric blue - trust */
-    --secondary: 220 100% 50%;
-    --secondary-foreground: 0 0% 100%;
+    /* Soft tiffany variant */
+    --secondary: 189 80% 60%;
+    --secondary-foreground: 195 100% 8%;
 
     --muted: 195 50% 20%;
     --muted-foreground: 189 30% 70%;
 
-    /* Lime green - energy */
-    --accent: 104 100% 54%;
+    /* Light tiffany accent */
+    --accent: 189 90% 55%;
     --accent-foreground: 195 100% 8%;
 
     --destructive: 0 84.2% 60.2%;
@@ -48,7 +48,7 @@ All colors MUST be HSL.
     
     /* Gradients */
     --gradient-primary: linear-gradient(135deg, hsl(195, 100%, 8%), hsl(195, 80%, 15%));
-    --gradient-accent: linear-gradient(135deg, hsl(189, 100%, 50%), hsl(220, 100%, 50%));
+    --gradient-accent: linear-gradient(135deg, hsl(189, 100%, 50%), hsl(189, 80%, 60%));
     
     /* Animations */
     --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
