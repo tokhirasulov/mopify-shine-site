@@ -12,19 +12,19 @@ const CleaningBubbles = () => {
   const [bubbles, setBubbles] = useState<Bubble[]>([]);
 
   useEffect(() => {
-    // Generate bubbles spread across the screen width
-    const newBubbles = Array.from({ length: 15 }, (_, i) => ({
+    // Generate many bubbles to fill the entire screen
+    const newBubbles = Array.from({ length: 30 }, (_, i) => ({
       id: i,
       x: Math.random() * 100,
-      size: Math.random() * 30 + 15,
-      duration: Math.random() * 4 + 4,
-      delay: Math.random() * 5,
+      size: Math.random() * 40 + 20,
+      duration: Math.random() * 6 + 5,
+      delay: Math.random() * 8,
     }));
     setBubbles(newBubbles);
   }, []);
 
   return (
-    <div className="fixed inset-0 pointer-events-none overflow-hidden opacity-20 z-0">
+    <div className="fixed inset-0 pointer-events-none overflow-hidden opacity-30 z-0">
       {bubbles.map((bubble) => (
         <div
           key={bubble.id}
