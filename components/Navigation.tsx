@@ -28,7 +28,10 @@ const Navigation = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center gap-2">
-            {/* <MopifyIcon className="w-6 h-6 text-primary" data-testid="icon-logo" /> */}
+            <MopifyIcon
+              className="w-6 h-6 text-primary"
+              data-testid="icon-logo"
+            />
             <span
               className="text-xl font-bold gradient-text"
               data-testid="text-brand"
