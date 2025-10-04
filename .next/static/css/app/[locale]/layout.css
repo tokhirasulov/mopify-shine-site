@@ -1319,9 +1319,6 @@ video {
 .border-primary\/10 {
   border-color: hsl(var(--primary) / 0.1);
 }
-.border-primary\/20 {
-  border-color: hsl(var(--primary) / 0.2);
-}
 .border-sidebar-border {
   border-color: hsl(var(--sidebar-border));
 }
@@ -1531,6 +1528,9 @@ video {
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
 }
+.pb-16 {
+  padding-bottom: 4rem;
+}
 .pb-3 {
   padding-bottom: 0.75rem;
 }
@@ -1567,6 +1567,9 @@ video {
 .pt-16 {
   padding-top: 4rem;
 }
+.pt-24 {
+  padding-top: 6rem;
+}
 .pt-3 {
   padding-top: 0.75rem;
 }
@@ -1575,12 +1578,6 @@ video {
 }
 .pt-8 {
   padding-top: 2rem;
-}
-.pb-16 {
-  padding-bottom: 4rem;
-}
-.pt-24 {
-  padding-top: 6rem;
 }
 .text-left {
   text-align: left;
