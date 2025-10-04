@@ -1,85 +1,123 @@
-'use client';
+"use client";
 
 import { Button } from "@/components/ui/button";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
+import heroImg from "../public/assets/hero-cleaning.jpg";
 
 const Hero = () => {
-  const t = useTranslations('hero');
-  
+  const t = useTranslations("hero");
+
   return (
     <section className="relative min-h-screen flex items-center pt-24 pb-16 md:pt-32 md:pb-24">
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-background via-background to-card" />
-        <Image 
-          src="/assets/hero-cleaning.jpg"
-          alt="Sparkling clean home interior" 
+        <Image
+          src={heroImg}
+          alt="Sparkling clean home interior"
           fill
           className="object-cover opacity-10"
           priority
         />
       </div>
-      
+
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div className="space-y-8">
-            
             <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold leading-tight">
-              {t('title')}{" "}
-              <span className="gradient-text">{t('titleHighlight')}</span>
+              {t("title")}{" "}
+              <span className="gradient-text">{t("titleHighlight")}</span>
             </h1>
-            
+
             <p className="text-xl text-muted-foreground max-w-2xl">
-              {t('description')}
+              {t("description")}
             </p>
-            
+
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button variant="hero" size="lg" className="text-lg px-8" data-testid="button-get-started">
-                {t('getStarted')}
+              <Button
+                variant="hero"
+                size="lg"
+                className="text-lg px-8"
+                data-testid="button-get-started"
+              >
+                {t("getStarted")}
                 <ArrowRight className="w-5 h-5" />
               </Button>
-              <Button variant="secondary" size="lg" className="text-lg px-8" data-testid="button-learn-more">
-                {t('learnMore')}
+              <Button
+                variant="secondary"
+                size="lg"
+                className="text-lg px-8"
+                data-testid="button-learn-more"
+              >
+                {t("learnMore")}
               </Button>
             </div>
-            
+
             <div className="flex flex-wrap gap-6 pt-4">
               <div className="flex items-center gap-2">
                 <CheckCircle2 className="w-5 h-5 text-accent" />
-                <span className="text-sm">{t('benefit1')}</span>
+                <span className="text-sm">{t("benefit1")}</span>
               </div>
               <div className="flex items-center gap-2">
                 <CheckCircle2 className="w-5 h-5 text-accent" />
-                <span className="text-sm">{t('benefit2')}</span>
+                <span className="text-sm">{t("benefit2")}</span>
               </div>
               <div className="flex items-center gap-2">
                 <CheckCircle2 className="w-5 h-5 text-accent" />
-                <span className="text-sm">{t('benefit3')}</span>
+                <span className="text-sm">{t("benefit3")}</span>
               </div>
             </div>
           </div>
-          
+
           <div className="relative">
             <div className="grid grid-cols-2 gap-6">
-              <div className="glass-card p-6 rounded-2xl hover:scale-105 transition-transform duration-300 h-32 flex flex-col justify-center" data-testid="stat-availability">
-                <div className="text-4xl font-bold text-primary mb-2">{t('stat1Value')}</div>
-                <div className="text-sm text-muted-foreground">{t('stat1Title')}</div>
+              <div
+                className="glass-card p-6 rounded-2xl hover:scale-105 transition-transform duration-300 h-32 flex flex-col justify-center"
+                data-testid="stat-availability"
+              >
+                <div className="text-4xl font-bold text-primary mb-2">
+                  {t("stat1Value")}
+                </div>
+                <div className="text-sm text-muted-foreground">
+                  {t("stat1Title")}
+                </div>
               </div>
-              
-              <div className="glass-card p-6 rounded-2xl hover:scale-105 transition-transform duration-300 h-32 flex flex-col justify-center" data-testid="stat-satisfaction">
-                <div className="text-4xl font-bold text-secondary mb-2">{t('stat2Value')}</div>
-                <div className="text-sm text-muted-foreground">{t('stat2Title')}</div>
+
+              <div
+                className="glass-card p-6 rounded-2xl hover:scale-105 transition-transform duration-300 h-32 flex flex-col justify-center"
+                data-testid="stat-satisfaction"
+              >
+                <div className="text-4xl font-bold text-secondary mb-2">
+                  {t("stat2Value")}
+                </div>
+                <div className="text-sm text-muted-foreground">
+                  {t("stat2Title")}
+                </div>
               </div>
-              
-              <div className="glass-card p-6 rounded-2xl hover:scale-105 transition-transform duration-300 h-32 flex flex-col justify-center" data-testid="stat-homes-cleaned">
-                <div className="text-4xl font-bold text-accent mb-2">{t('stat3Value')}</div>
-                <div className="text-sm text-muted-foreground">{t('stat3Title')}</div>
+
+              <div
+                className="glass-card p-6 rounded-2xl hover:scale-105 transition-transform duration-300 h-32 flex flex-col justify-center"
+                data-testid="stat-homes-cleaned"
+              >
+                <div className="text-4xl font-bold text-accent mb-2">
+                  {t("stat3Value")}
+                </div>
+                <div className="text-sm text-muted-foreground">
+                  {t("stat3Title")}
+                </div>
               </div>
-              
-              <div className="glass-card p-6 rounded-2xl hover:scale-105 transition-transform duration-300 h-32 flex flex-col justify-center" data-testid="stat-response-time">
-                <div className="text-4xl font-bold text-primary mb-2">{t('stat4Value')}</div>
-                <div className="text-sm text-muted-foreground">{t('stat4Title')}</div>
+
+              <div
+                className="glass-card p-6 rounded-2xl hover:scale-105 transition-transform duration-300 h-32 flex flex-col justify-center"
+                data-testid="stat-response-time"
+              >
+                <div className="text-4xl font-bold text-primary mb-2">
+                  {t("stat4Value")}
+                </div>
+                <div className="text-sm text-muted-foreground">
+                  {t("stat4Title")}
+                </div>
               </div>
             </div>
           </div>

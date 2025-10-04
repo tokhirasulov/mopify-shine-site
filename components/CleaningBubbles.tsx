@@ -12,7 +12,6 @@ const CleaningBubbles = () => {
   const [bubbles, setBubbles] = useState<Bubble[]>([]);
 
   useEffect(() => {
-    // Generate many bubbles to fill the entire screen
     const newBubbles = Array.from({ length: 30 }, (_, i) => ({
       id: i,
       x: Math.random() * 100,
@@ -31,12 +30,12 @@ const CleaningBubbles = () => {
           className="absolute rounded-full bg-primary/5 border border-primary/10"
           style={{
             left: `${bubble.x}%`,
-            bottom: '-50px',
+            bottom: "-50px",
             width: `${bubble.size}px`,
             height: `${bubble.size}px`,
             animation: `rise ${bubble.duration}s ease-in infinite`,
             animationDelay: `${bubble.delay}s`,
-            willChange: 'transform',
+            willChange: "transform",
           }}
         />
       ))}
