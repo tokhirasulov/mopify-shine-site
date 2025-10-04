@@ -14,8 +14,12 @@ i18n
     },
     fallbackLng: 'ru',
     lng: 'ru',
+    debug: false,
     interpolation: {
       escapeValue: false,
+    },
+    react: {
+      useSuspense: false,
     },
   });
 
