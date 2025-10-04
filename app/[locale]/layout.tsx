@@ -1,13 +1,11 @@
 import { NextIntlClientProvider } from 'next-intl';
-import { getMessages, getTranslations, setRequestLocale } from 'next-intl/server';
+import { getMessages, setRequestLocale } from 'next-intl/server';
 import { notFound } from 'next/navigation';
 import { routing } from '@/i18n/routing';
-import { Toaster } from "@/components/ui/toaster";
-import { Toaster as Sonner } from "@/components/ui/sonner";
-import { TooltipProvider } from "@/components/ui/tooltip";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { Providers } from "@/components/Providers";
 import { Inter } from "next/font/google";
 import type { Metadata } from 'next';
+import './globals.css';
 
 const inter = Inter({ subsets: ["latin", "cyrillic"] });
 
@@ -21,7 +19,6 @@ export async function generateMetadata({
   params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
   const { locale } = await params;
-  const t = await getTranslations({ locale, namespace: 'metadata' });
 
   const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://mopify.uz';
   
@@ -99,8 +96,6 @@ export async function generateMetadata({
     },
   };
 }
-
-const queryClient = new QueryClient();
 
 export default async function LocaleLayout({
   children,
@@ -184,13 +179,9 @@ export default async function LocaleLayout({
       </head>
       <body className={inter.className}>
         <NextIntlClientProvider messages={messages}>
-          <QueryClientProvider client={queryClient}>
-            <TooltipProvider>
-              <Toaster />
-              <Sonner />
-              {children}
-            </TooltipProvider>
-          </QueryClientProvider>
+          <Providers>
+            {children}
+          </Providers>
         </NextIntlClientProvider>
       </body>
     </html>
