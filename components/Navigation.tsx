@@ -11,11 +11,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-<<<<<<< HEAD
-import MopifyIcon from "../public/assets/icons/mopify-icon.svg"
-=======
 import MopifyIcon from "../public/assets/icons/mopify-icon.svg";
->>>>>>> 1411757b96607304eb88def485140841e38cfb07
 
 const Navigation = () => {
   const t = useTranslations("nav");
@@ -28,64 +24,65 @@ const Navigation = () => {
   };
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
-          <div className="flex items-center gap-2">
-            <MopifyIcon className="w-6 h-6 text-primary" data-testid="icon-logo" />
-            <span className="text-xl font-bold gradient-text" data-testid="text-brand">Mopify</span>
+    <nav className='fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border'>
+      <div className='container mx-auto px-4 sm:px-6 lg:px-8'>
+        <div className='flex items-center justify-between h-16'>
+          <div className='flex items-center gap-2'>
+            <MopifyIcon
+              className='w-6 h-6 text-primary'
+              data-testid='icon-logo'
+            />
+            <span
+              className='text-xl font-bold gradient-text'
+              data-testid='text-brand'>
+              Mopify
+            </span>
           </div>
 
-          <div className="hidden md:flex items-center gap-8">
+          <div className='hidden md:flex items-center gap-8'>
             <a
-              href="#services"
-              className="text-foreground/80 hover:text-foreground transition-colors"
-              data-testid="link-services"
-            >
+              href='#services'
+              className='text-foreground/80 hover:text-foreground transition-colors'
+              data-testid='link-services'>
               {t("services")}
             </a>
             <a
-              href="#why-us"
-              className="text-foreground/80 hover:text-foreground transition-colors"
-              data-testid="link-why-us"
-            >
+              href='#why-us'
+              className='text-foreground/80 hover:text-foreground transition-colors'
+              data-testid='link-why-us'>
               {t("whyUs")}
             </a>
             <a
-              href="#testimonials"
-              className="text-foreground/80 hover:text-foreground transition-colors"
-              data-testid="link-testimonials"
-            >
+              href='#testimonials'
+              className='text-foreground/80 hover:text-foreground transition-colors'
+              data-testid='link-testimonials'>
               {t("testimonials")}
             </a>
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
                 <Button
-                  variant="outline"
+                  variant='outline'
                   style={{ padding: "8px 12px" }}
-                  size="sm"
-                  data-testid="button-language"
-                >
-                  <Globe className="w-4 h-4 mr-2 " />
+                  size='sm'
+                  data-testid='button-language'>
+                  <Globe className='w-4 h-4 mr-2 ' />
                   {locale === "ru" ? "RU" : "UZ"}
                 </Button>
               </DropdownMenuTrigger>
               <DropdownMenuContent>
                 <DropdownMenuItem
                   onClick={() => changeLanguage("ru")}
-                  data-testid="language-ru"
-                >
+                  data-testid='language-ru'>
                   Русский
                 </DropdownMenuItem>
                 <DropdownMenuItem
                   onClick={() => changeLanguage("uz")}
-                  data-testid="language-uz"
-                >
+                  data-testid='language-uz'>
                   O'zbek
                 </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
-            <Button variant="hero" size="sm" data-testid="button-get-quote">
+            <Button variant='hero' size='sm' data-testid='button-get-quote'>
               {t("getQuote")}
             </Button>
           </div>
