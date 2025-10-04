@@ -29,7 +29,7 @@ const Navigation = () => {
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center gap-2">
             <MopifyIcon
-              className="w-6 h-6 text-primary"
+              className="w-full h-full text-primary"
               data-testid="icon-logo"
             />
             <span
