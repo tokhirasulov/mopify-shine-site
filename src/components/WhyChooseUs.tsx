@@ -1,48 +1,41 @@
 import { Shield, Clock, Leaf, Award, Users, Zap } from "lucide-react";
-
-const benefits = [
-  {
-    icon: Shield,
-    title: "Fully Insured & Bonded",
-    description: "Your property is protected with comprehensive insurance coverage",
-  },
-  {
-    icon: Clock,
-    title: "Flexible Scheduling",
-    description: "Book services at times that work best for your schedule",
-  },
-  {
-    icon: Leaf,
-    title: "Eco-Friendly Products",
-    description: "Safe, green cleaning solutions for your family and pets",
-  },
-  {
-    icon: Award,
-    title: "5-Star Rated",
-    description: "Consistently top-rated by our satisfied customers",
-  },
-  {
-    icon: Users,
-    title: "Trained Professionals",
-    description: "Background-checked staff with extensive training",
-  },
-  {
-    icon: Zap,
-    title: "Fast Response",
-    description: "Quick turnaround for last-minute cleaning needs",
-  },
-];
+import { useTranslation } from "react-i18next";
 
 const WhyChooseUs = () => {
+  const { t } = useTranslation();
+  
+  const benefits = [
+    {
+      icon: Shield,
+      title: t('whyUs.certified.title'),
+      description: t('whyUs.certified.description'),
+    },
+    {
+      icon: Clock,
+      title: t('whyUs.pricing.title'),
+      description: t('whyUs.pricing.description'),
+    },
+    {
+      icon: Leaf,
+      title: t('whyUs.eco.title'),
+      description: t('whyUs.eco.description'),
+    },
+    {
+      icon: Award,
+      title: t('whyUs.satisfaction.title'),
+      description: t('whyUs.satisfaction.description'),
+    },
+  ];
+  
   return (
     <section id="why-us" className="py-24">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl sm:text-5xl font-bold mb-4">
-            Why Choose <span className="gradient-text">Mopify</span>
+            {t('whyUs.title')}
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Experience the difference with our professional, reliable, and eco-conscious cleaning services
+            {t('whyUs.subtitle')}
           </p>
         </div>
         

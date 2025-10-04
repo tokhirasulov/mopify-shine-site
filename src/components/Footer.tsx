@@ -1,6 +1,9 @@
 import { Sparkles, Mail, Phone, MapPin } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 const Footer = () => {
+  const { t } = useTranslation();
+  
   return (
     <footer className="bg-card/50 border-t border-border pt-16 pb-8">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -11,48 +14,47 @@ const Footer = () => {
               <span className="text-xl font-bold gradient-text">Mopify</span>
             </div>
             <p className="text-muted-foreground mb-6 max-w-md">
-              Professional cleaning services that transform your space. 
-              Trusted by thousands for residential and commercial cleaning needs.
+              {t('footer.description')}
             </p>
             <div className="space-y-3">
               <div className="flex items-center gap-3 text-muted-foreground">
                 <Phone className="w-5 h-5 text-primary" />
-                <span>(555) 123-4567</span>
+                <span>+998 90 123 45 67</span>
               </div>
               <div className="flex items-center gap-3 text-muted-foreground">
                 <Mail className="w-5 h-5 text-primary" />
-                <span>hello@mopify.com</span>
+                <span>info@mopify.uz</span>
               </div>
               <div className="flex items-center gap-3 text-muted-foreground">
                 <MapPin className="w-5 h-5 text-primary" />
-                <span>123 Clean Street, Sparkle City</span>
+                <span>{t('footer.location')}</span>
               </div>
             </div>
           </div>
           
           <div>
-            <h3 className="font-bold mb-4">Services</h3>
+            <h3 className="font-bold mb-4">{t('footer.services')}</h3>
             <ul className="space-y-2 text-muted-foreground">
-              <li><a href="#services" className="hover:text-foreground transition-colors">Residential Cleaning</a></li>
-              <li><a href="#services" className="hover:text-foreground transition-colors">Commercial Cleaning</a></li>
-              <li><a href="#services" className="hover:text-foreground transition-colors">Deep Cleaning</a></li>
-              <li><a href="#services" className="hover:text-foreground transition-colors">Carpet Cleaning</a></li>
+              <li><a href="#services" className="hover:text-foreground transition-colors">{t('footer.residential')}</a></li>
+              <li><a href="#services" className="hover:text-foreground transition-colors">{t('footer.commercial')}</a></li>
+              <li><a href="#services" className="hover:text-foreground transition-colors">{t('footer.deepCleaning')}</a></li>
+              <li><a href="#services" className="hover:text-foreground transition-colors">{t('footer.specialized')}</a></li>
             </ul>
           </div>
           
           <div>
-            <h3 className="font-bold mb-4">Company</h3>
+            <h3 className="font-bold mb-4">{t('footer.company')}</h3>
             <ul className="space-y-2 text-muted-foreground">
-              <li><a href="#" className="hover:text-foreground transition-colors">About Us</a></li>
-              <li><a href="#" className="hover:text-foreground transition-colors">Careers</a></li>
-              <li><a href="#" className="hover:text-foreground transition-colors">Contact</a></li>
-              <li><a href="#" className="hover:text-foreground transition-colors">Blog</a></li>
+              <li><a href="#" className="hover:text-foreground transition-colors">{t('footer.about')}</a></li>
+              <li><a href="#" className="hover:text-foreground transition-colors">{t('footer.careers')}</a></li>
+              <li><a href="#" className="hover:text-foreground transition-colors">{t('footer.contact')}</a></li>
+              <li><a href="#" className="hover:text-foreground transition-colors">{t('footer.blog')}</a></li>
             </ul>
           </div>
         </div>
         
         <div className="border-t border-border pt-8 text-center text-sm text-muted-foreground">
-          <p>&copy; {new Date().getFullYear()} Mopify. All rights reserved.</p>
+          <p>{t('footer.copyright', { year: new Date().getFullYear() })}</p>
         </div>
       </div>
     </footer>

@@ -1,7 +1,10 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Phone } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 const CTA = () => {
+  const { t } = useTranslation();
+  
   return (
     <section className="py-24">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -10,26 +13,25 @@ const CTA = () => {
           
           <div className="relative z-10 max-w-3xl mx-auto">
             <h2 className="text-4xl sm:text-5xl font-bold mb-6">
-              Ready for a <span className="gradient-text">Spotless Space?</span>
+              {t('cta.title')} <span className="gradient-text">{t('cta.titleHighlight')}</span>
             </h2>
             <p className="text-xl text-muted-foreground mb-8">
-              Get a free, no-obligation quote today and discover why thousands trust Mopify 
-              for all their cleaning needs.
+              {t('cta.description')}
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button variant="hero" size="lg" className="text-lg px-8">
-                Get Free Quote
+                {t('cta.getFreeQuote')}
                 <ArrowRight className="w-5 h-5" />
               </Button>
               <Button variant="secondary" size="lg" className="text-lg px-8">
                 <Phone className="w-5 h-5" />
-                Call Now
+                {t('cta.callNow')}
               </Button>
             </div>
             
             <p className="text-sm text-muted-foreground mt-6">
-              Available 24/7 • Same-day service available • No hidden fees
+              {t('cta.availability')}
             </p>
           </div>
         </div>

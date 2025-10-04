@@ -4,6 +4,9 @@ Allow: /
 User-agent: Bingbot
 Allow: /
 
+User-agent: Yandex
+Allow: /
+
 User-agent: Twitterbot
 Allow: /
 
@@ -12,3 +15,7 @@ Allow: /
 
 User-agent: *
 Allow: /
+Disallow: /admin/
+
+Sitemap: https://mopify.uz/sitemap.xml
+Crawl-delay: 0
