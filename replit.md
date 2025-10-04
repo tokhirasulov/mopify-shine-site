@@ -1,7 +1,7 @@
-# Cleaning Service Website
+# Mopify - Cleaning Service Website
 
 ## Overview
-This is a React-based cleaning service website built with Vite, TypeScript, and shadcn-ui components. The site features multilingual support (Russian and Uzbek) and showcases cleaning services with a modern, responsive design.
+This is a React-based cleaning service website built with Vite, TypeScript, and shadcn-ui components. The site features multilingual support (Russian and Uzbek) and showcases professional cleaning services with a modern, responsive design.
 
 ## Tech Stack
 - **Framework**: React 18
@@ -15,36 +15,63 @@ This is a React-based cleaning service website built with Vite, TypeScript, and 
 - **Icons**: Lucide React
 
 ## Project Structure
-- `src/`
-  - `pages/` - Page components (Index, NotFound)
-  - `components/` - Reusable UI components
-    - `ui/` - shadcn-ui components
-    - Feature components (Hero, Services, Testimonials, etc.)
-  - `i18n/` - Internationalization configuration and locales
-  - `lib/` - Utility functions
-  - `hooks/` - Custom React hooks
-  - `assets/` - Images and static assets
-- `public/` - Public assets
+```
+src/
+├── pages/          # Page components (Index, NotFound)
+├── components/     # Reusable UI components
+│   ├── ui/        # shadcn-ui components
+│   └── ...        # Feature components (Hero, Services, etc.)
+├── i18n/          # Internationalization config and locales
+├── lib/           # Utility functions
+├── hooks/         # Custom React hooks
+├── assets/        # Images and static assets
+└── ...            # App entry points
+public/            # Public static assets
+```
+
+## Replit Configuration
+The project has been configured to run properly in the Replit environment:
+
+### Vite Configuration (`vite.config.ts`)
+- **Host**: `0.0.0.0` (required for Replit's container environment)
+- **Port**: `5000` (Replit's standard frontend port)
+- **Allowed Hosts**: `true` (allows Replit's proxy domains)
+- **HMR WebSocket**: Configured for Replit's proxy with:
+  - `clientPort: 443` (Replit's external port)
+  - `protocol: 'wss'` (secure WebSocket)
+
+### Workflow
+- **Name**: "Start application"
+- **Command**: `npm run dev`
+- **Port**: 5000
+- **Output**: webview
+
+### Deployment
+- **Target**: autoscale (static frontend)
+- **Build**: `npm run build`
+- **Run**: `npm run preview`
 
 ## Development
-The project runs on port 5000 with the Vite dev server. The workflow "Start application" runs `npm run dev` which starts the development server with hot module replacement.
-
-## Configuration
-- **Vite**: Configured to run on 0.0.0.0:5000 for Replit compatibility
-- **HMR**: WebSocket configured for Replit's proxy environment
-- **Build**: Standard Vite build process outputs to `dist/`
+Run `npm run dev` to start the development server. The application will be available on port 5000 with hot module replacement enabled.
 
 ## Features
-- Multilingual support (Russian/Uzbek)
-- Responsive design
-- Modern UI with Tailwind CSS
-- Component library with shadcn-ui
-- SEO-friendly structure
-- Professional cleaning service showcase
+- Professional cleaning service landing page
+- Multilingual support (Russian/Uzbek via i18next)
+- Responsive design with Tailwind CSS
+- Animated loading screen
+- SEO-optimized with meta tags and structured data
+- Modern UI with shadcn-ui components
+- Smooth animations and transitions
 
 ## Recent Changes
-- **2025-10-04**: Imported from GitHub and configured for Replit environment
-  - Changed server port from 8080 to 5000
-  - Updated host to 0.0.0.0 for Replit compatibility
-  - Configured HMR WebSocket for proxy environment
-  - Set up deployment configuration for autoscale
+- **2025-10-04**: Imported from GitHub and configured for Replit
+  - Updated Vite config for Replit environment (port 5000, host 0.0.0.0)
+  - Added `allowedHosts: true` for Replit proxy compatibility
+  - Configured HMR WebSocket for secure connection through Replit proxy
+  - Set up workflow for automatic dev server management
+  - Configured deployment settings for production builds
+  
+## Known Behaviors
+- The site includes a loading screen that displays for ~2 seconds on first visit
+- HMR (Hot Module Replacement) is working correctly for instant updates during development
+- Some React Router future flag warnings appear in console (informational only, not errors)
