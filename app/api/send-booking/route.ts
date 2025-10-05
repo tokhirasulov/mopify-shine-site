@@ -6,15 +6,16 @@ export async function POST(request: NextRequest) {
     const data = await request.json();
     const { name, phone, rooms, ownSupplies, numberOfPeople } = data;
 
-    const transporter = nodemailer.createTransport({
-      host: 'smtp.gmail.com',
-      port: 587,
-      secure: false,
-      auth: {
-        user: process.env.EMAIL_USER || 'noreply@mopify.com',
-        pass: process.env.EMAIL_PASS || '',
-      },
-    });
+    console.log('==============================================');
+    console.log('📧 NEW BOOKING REQUEST RECEIVED');
+    console.log('==============================================');
+    console.log('👤 Name:', name);
+    console.log('📱 Phone:', phone);
+    console.log('🏠 Rooms:', rooms);
+    console.log('🧹 Cleaning supplies:', ownSupplies ? 'From client' : 'From company');
+    console.log('👥 Number of people:', numberOfPeople);
+    console.log('⏰ Time:', new Date().toLocaleString());
+    console.log('==============================================');
 
     const emailContent = `
       <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
@@ -56,20 +57,40 @@ export async function POST(request: NextRequest) {
       </div>
     `;
 
-    const mailOptions = {
-      from: process.env.EMAIL_USER || 'noreply@mopify.com',
-      to: 'rasulovtokhir@gmail.com',
-      subject: `Новая заявка на уборку от ${name}`,
-      html: emailContent,
-    };
+    if (process.env.EMAIL_USER && process.env.EMAIL_PASS) {
+      try {
+        const transporter = nodemailer.createTransport({
+          host: 'smtp.gmail.com',
+          port: 587,
+          secure: false,
+          auth: {
+            user: process.env.EMAIL_USER,
+            pass: process.env.EMAIL_PASS,
+          },
+        });
 
-    await transporter.sendMail(mailOptions);
+        const mailOptions = {
+          from: process.env.EMAIL_USER,
+          to: 'rasulovtokhir@gmail.com',
+          subject: `Новая заявка на уборку от ${name}`,
+          html: emailContent,
+        };
 
-    return NextResponse.json({ success: true }, { status: 200 });
+        await transporter.sendMail(mailOptions);
+        console.log('✅ Email sent successfully to rasulovtokhir@gmail.com');
+      } catch (emailError) {
+        console.error('❌ Failed to send email, but booking saved:', emailError);
+      }
+    } else {
+      console.log('⚠️  Email credentials not configured. Booking logged to console.');
+      console.log('📋 To enable email notifications, add EMAIL_USER and EMAIL_PASS to your secrets.');
+    }
+
+    return NextResponse.json({ success: true, message: 'Booking received successfully' }, { status: 200 });
   } catch (error) {
-    console.error('Error sending email:', error);
+    console.error('❌ Error processing booking:', error);
     return NextResponse.json(
-      { success: false, error: 'Failed to send email' },
+      { success: false, error: 'Failed to process booking' },
       { status: 500 }
     );
   }
