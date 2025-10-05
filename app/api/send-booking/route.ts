@@ -60,7 +60,7 @@ export async function POST(request: NextRequest) {
     if (process.env.EMAIL_USER && process.env.EMAIL_PASS) {
       try {
         const transporter = nodemailer.createTransport({
-          host: 'smtp.gmail.com',
+          host: 'pro.turbo-smtp.com',
           port: 587,
           secure: false,
           auth: {
