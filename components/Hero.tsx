@@ -40,6 +40,7 @@ const Hero = () => {
                 size="lg"
                 className="text-lg px-8"
                 data-testid="button-get-started"
+                onClick={() => document.getElementById('booking')?.scrollIntoView({ behavior: 'smooth' })}
               >
                 {t("getStarted")}
                 <ArrowRight className="w-5 h-5" />
@@ -49,6 +50,7 @@ const Hero = () => {
                 size="lg"
                 className="text-lg px-8"
                 data-testid="button-learn-more"
+                onClick={() => document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' })}
               >
                 {t("learnMore")}
               </Button>

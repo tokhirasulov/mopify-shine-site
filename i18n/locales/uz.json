@@ -21,7 +21,7 @@
     "stat3Title": "Tozalangan uylar",
     "stat3Value": "5000+",
     "stat4Title": "Javob berish vaqti",
-    "stat4Value": "<2s"
+    "stat4Value": "< 2 soat"
   },
   "services": {
     "title": "Bizning xizmatlarimiz",
@@ -98,6 +98,27 @@
     "callNow": "Hozir qo'ng'iroq qiling",
     "availability": "24/7 mavjud • O'sha kunda xizmat • Yashirin to'lovsiz"
   },
+  "bookingForm": {
+    "title": "Tozalashni bron qilish",
+    "nameLabel": "Ismingiz",
+    "namePlaceholder": "Ismingizni kiriting",
+    "phoneLabel": "Telefon raqami",
+    "phonePlaceholder": "+998 XX XXX XX XX",
+    "roomsLabel": "Nechta xona tozalash kerak?",
+    "roomsPlaceholder": "Xonalar sonini kiriting",
+    "suppliesLabel": "Tozalash vositalari",
+    "suppliesCheckbox": "Menda o'zim tozalash vositalari bor",
+    "suppliesOwn": "Siz o'z tozalash vositalaringizdan foydalanasiz",
+    "suppliesOurs": "Biz tozalash vositalarini taqdim etamiz",
+    "peopleLabel": "Nechta odam buyurtma qilmoqchisiz?",
+    "peoplePlaceholder": "Odamlar sonini kiriting",
+    "back": "Orqaga",
+    "next": "Keyingi",
+    "submit": "Yuborish",
+    "sending": "Yuborilmoqda...",
+    "successMessage": "Arizangiz muvaffaqiyatli yuborildi! Tez orada siz bilan bog'lanamiz.",
+    "errorMessage": "Xatolik yuz berdi. Iltimos, qayta urinib ko'ring."
+  },
   "footer": {
     "description": "Ishonch bilan professional tozalash xizmatlari. 2020 yildan beri makoningizni benuqson qilamiz.",
     "services": "Xizmatlar",
@@ -114,6 +135,6 @@
     "email": "Email",
     "address": "Manzil",
     "location": "123 Clean Street, Sparkle City, SC 12345",
-    "copyright": "© {{year}} Mopify. Barcha huquqlar himoyalangan."
+    "copyright": "© {year} Mopify. Barcha huquqlar himoyalangan."
   }
 }
