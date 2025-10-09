@@ -23,7 +23,7 @@ jobs:
 
       - name: Run remote deploy commands
         run: |
-          ssh -o StrictHostKeyChecking=yes USER@YOUR_SERVER_IP << 'EOF'
+          ssh -o StrictHostKeyChecking=yes rasulovtokhir@83.69.139.161 << 'EOF'
             set -e
             cd /www/mopify.uz   # <-- change to your document root
             # ensure we are on the right branch
