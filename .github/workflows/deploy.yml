@@ -1,37 +1,34 @@
 name: Deploy to ISPmanager server
-
 on:
   push:
     branches: [ main ]
-
 jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-
+      
       - name: Setup SSH agent
         uses: webfactory/ssh-agent@v0.9.0
         with:
           ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
-
-      - name: Ensure server is known
+      
+      - name: Add server to known hosts
         run: |
           mkdir -p ~/.ssh
-          echo "${{ secrets.SSH_KNOWN_HOSTS }}" > ~/.ssh/known_hosts
-
-      - name: Run remote deploy commands
+          echo "${{ secrets.SSH_KNOWN_HOSTS }}" >> ~/.ssh/known_hosts
+          chmod 644 ~/.ssh/known_hosts
+      
+      - name: Deploy to server
         run: |
           ssh -o StrictHostKeyChecking=yes rasulovtokhir@83.69.139.161 << 'EOF'
             set -e
-            cd /www/mopify.uz   # <-- change to your document root
-            # ensure we are on the right branch
+            cd /www/mopify.uz
             git fetch --all
             git reset --hard origin/main
             npm ci
             npm run build
-            # reload pm2 app; if not started, start it
             pm2 reload mopify || pm2 start npm --name mopify -- start
             pm2 save
           EOF
